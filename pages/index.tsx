@@ -28,7 +28,7 @@ export default function Home({ results }: Iresult) {
     <div className="container">
       <Seo title="Home" />
       {results?.map((people) => (
-        <div onClick={() => onClick(people.id)} className="people">
+        <div key={people.id} onClick={() => onClick(people.id)} className="people">
           <Link href={`/famous/${people.id}`} legacyBehavior>
             <a>
               <img src={`${people.squareImage}`} />
