@@ -51,7 +51,7 @@ export default function Detail({ params }: IParams) {
                     <div className="networth">Country: {famous.country}</div>
                     <div className="bio">
                         {famous.bio?.map((i: string) => (
-                            <span>{i}</span>
+                            <span key={i}>{i}</span>
                         ))}
                     </div>
                 </div>
@@ -62,7 +62,7 @@ export default function Detail({ params }: IParams) {
                 </div>
                 <div className="finanes">
                     {famous.financialAssets?.map((i: Ifinan) => (
-                        <div className="finaninfo">
+                        <div key={i.ticker} className="finaninfo">
                             <span>Ticker: {i.ticker}</span>
                             <span>Shares: {i.numberOfShares}</span>
                             {i.exerciseOptionPrice ? <span>Exercise Price: {i.exerciseOptionPrice}$</span> : null}
